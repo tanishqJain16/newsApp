@@ -57,7 +57,8 @@ export class News extends Component {
     render() {
         return (
             <div className='container my-3'>
-                <h2 className='text-center'>TOP HEADLINES</h2>
+                <h2 className='text-center' style={{margin:'70px 0px 0px 0px'}}>TOP HEADLINES</h2>
+                <h4 className='text-center'>({(this.props.category).toUpperCase()})</h4>
                 {this.state.loading&&<Spinner/>}
                 <div className="row">
                     {!this.state.loading&&this.state.articles.map((e) => {
@@ -67,8 +68,8 @@ export class News extends Component {
                             <NewsItems title={e.title?e.title.slice(0.45):""} discription={e.description?e.description.slice(0,85):""} imageUrl={e.urlToImage} newsUrl={e.url} author={e.author} date={e.publishedAt} />
                         </div>
                     })}
-
-                    <div className="container d-flex justify-content-between">
+ 
+                    <div className="container d-flex justify-content-between ">
                         <button type="button" disabled={this.state.page <= 1} className="btn btn-dark mx-1" onClick={this.handleprevclick}>&larr; Previous</button>
                         <button type="button"disabled={this.state.page===Math.ceil(this.state.totalResults/this.props.pageSize)} className="btn btn-dark" onClick={this.handlenextclick}>Next &rarr;</button>
                     </div>
