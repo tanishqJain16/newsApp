@@ -3,6 +3,7 @@ import './App.css';
 import LoadingBar from 'react-top-loading-bar'
 import React, { useState } from 'react'
 import Navbar from './Components/Navbar';
+//mudit commit
 import News from './Components/News';
 
 import {
